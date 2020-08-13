@@ -1,0 +1,20 @@
+server:
+  port: 8080
+swagger:
+  enable: true
+
+spring:
+  # 属性值可以为空，但是不能没有以下字段，否则启动报错
+  datasource:
+    url: jdbc:mysql://localhost:3306/hr_sys?serverTimezone=UTC
+    username: hr
+    password: hr_1234
+    driver-class-name: com.mysql.cj.jdbc.Driver
+mybatis-plus:
+  # 实体类的存放路径
+  type-aliases-package: net.leay.demo
+  mapper-locations: classpath:mapper/*.xml
+
+# 自己定义的
+LoginFilter:
+  enable: false
