@@ -31,11 +31,26 @@ public class ResumeController {
   @ApiOperation(value = "dd")
   @GetMapping("/test")
   @ResponseStatus(HttpStatus.OK)
-  public ArrayList<Resume> test() {
+  public ArrayList<Resume> resumes() {
     ArrayList<Resume> resumes = (ArrayList<Resume>) resumeService.list();
     System.out.println(resumes);
 
     return resumes;
     // return "test";
+  }
+
+  @ApiOperation(value = "addResume")
+  @GetMapping("add")
+  public String addResume() {
+    Resume resume = new Resume();
+    resume.setSchool("ss");
+    resume.setName("tom");
+    resume.setDeleteStatus(false);
+    resume.setProcess(0);
+    resume.setId("5105322256699");
+    // resume.setUuid(resumeService.);
+    resumeService.save(resume);
+
+    return "ok";
   }
 }
