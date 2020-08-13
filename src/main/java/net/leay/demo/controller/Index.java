@@ -2,6 +2,7 @@ package net.leay.demo.controller;
 
 
 import io.swagger.annotations.ApiOperation;
+import net.leay.demo.exception.global.TestException;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
@@ -24,9 +25,10 @@ public class Index {
   }
 
   @ApiOperation(value = "dd")
-  @GetMapping("/test")
-  public String tesst() {
-    System.out.println("namehahahhaha");
-    return "test";
+  @GetMapping("/testException")
+  public String tesstException() throws TestException {
+    throw new TestException();
+    // System.out.println("namehahahhaha");
+    // return "test";
   }
 }

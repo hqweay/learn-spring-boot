@@ -12,5 +12,5 @@ import net.leay.demo.entity.Resume;
  * @since 2020-08-13
  */
 public interface ResumeMapper extends BaseMapper<Resume> {
-
+  
 }
